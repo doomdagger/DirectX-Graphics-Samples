@@ -102,7 +102,7 @@ void MyD3D12HelloTriangle::LoadPipeline()
 	ThrowIfFailed(swapChain.As(&m_swapChain));
 
 	// This sample does not support fullscreen transitions.
-	// ThrowIfFailed(factory->MakeWindowAssociation(Win32Application::GetHwnd(), DXGI_MWA_NO_ALT_ENTER));
+	ThrowIfFailed(factory->MakeWindowAssociation(Win32Application::GetHwnd(), DXGI_MWA_NO_ALT_ENTER));
 
 	m_frameIndex = m_swapChain->GetCurrentBackBufferIndex();
 
@@ -204,9 +204,9 @@ void MyD3D12HelloTriangle::LoadAssets()
 		// Define the geometry for a triangle.
 		Vertex triangleVertices[] =
 		{
-			{{0.0f, 0.25f * m_aspectRatio, 0.0f}, {1.0f, 0.0f, 0.0f, 1.0f}},
-			{{0.25f, -0.25f * m_aspectRatio, 0.0f}, {0.0f, 1.0f, 0.0f, 1.0f}},
-			{{-0.25f, -0.25f * m_aspectRatio, 0.0f}, {0.0f, 0.0f, 1.0f, 1.0f}}
+			{{0.0f, 0.5f * m_aspectRatio, 0.0f}, {1.0f, 0.0f, 0.0f, 1.0f}},
+			{{0.5f, -0.5f * m_aspectRatio, 0.0f}, {0.0f, 1.0f, 0.0f, 1.0f}},
+			{{-0.5f, -0.5f * m_aspectRatio, 0.0f}, {0.0f, 0.0f, 1.0f, 1.0f}}
 		};
 
 		const UINT vertexBufferSize = sizeof(triangleVertices);
